@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mission to Mars</title>
+
+        <!--Bootstrap Link-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <!--CSS Link-->
+        <link rel="stylesheet" href="../static/style.css">
+
+        <!--Javascript JQuery Links-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+    
+    </head>
+    <body class="text-white">
+        <div class="container-fluid banner" >
+            <div class= "banner-text text-center">
+              <h1>MISSION TO MARS</h1>
+              <a href="/scrape" class="banner-btn">Scrape New Data</a>
+              <div><a href="#scraped-data"><img src="../static/mars.jpg"></a></div>
+            </div>
+          </div>
+          
+          <!-- News Section -->
+        <div class="container">
+            <h3>Latest Mars News</h3>
+            <h6>{{ mars.news_title }}</h6>
+            <p>{{ mars.news_paragraph }}</p>
+        </div>
+
+        <!-- Featured Image-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h3>Featured Mars Image</h3>
+                    <img src="{{ mars.featured_image_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+                </div>
+            </div>
+        </div>
+
+         <!-- Weather Info -->
+         <br>
+         <div class="container">
+            <h3>Current Weather on Mars</h3>
+            <p>{{ mars.mars_weather }}</p>
+        </div>
+
+        <!-- Table -->
+        <div class="container">
+            <h3 class="card-title">Mars Facts</h3>
+            <p class="card-text"id="light-font" >{{ mars.fact_table | safe }}</p>
+        </div>
+
+        <!-- Hemispheres -->
+        <div class="row">
+            <div class="card-body id="image>
+              <div class="col-md-12">
+                <h3 align="center" id="font">Mars Hemisphere</h3>
+                <div class="row">
+                  {% for hem in mars.hemisphere_images %}
+                    <div class="col-md-3">
+                      <button type="button" class="btn-custom" data-toggle="modal" data-target="#{{ hem.title.replace(' ','-') }}"><img src="{{ hem.img_url }}" class="img-thumbnail"  alt="{{hem.title}}">
+                      </button>
+                      <h6 class="card-text" align="center" id="font">{{ hem.title }}</h6>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% for hem in mars.hemisphere_images %}
+            <div class="modal fade" id="{{ hem.title.replace(' ','-') }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ hem.title }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" id="close-botton">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="{{ hem.img_url }}" class=" img-fluid"  alt="{{ hem.title }}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+
+    </body>
