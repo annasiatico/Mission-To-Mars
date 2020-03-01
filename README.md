@@ -2,7 +2,7 @@
 
 A Flask web application that scrapes various websites for data related to Mars, saves the information in a database using MongoDB and displays the information in a single HTML page.
 
-![Header](../Static/header.png)
+![Header](/static/header.png)
 
 ### NASA Mars News
 
