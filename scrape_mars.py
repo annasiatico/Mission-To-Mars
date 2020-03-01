@@ -5,7 +5,7 @@ import pandas as pd
 import pymongo
 from pprint import pprint
 
-conn = "mongodb://127.0.0.1:27017"
+conn = "mongodb://localhost:27017"
 client = pymongo.MongoClient(conn)
 db = client.mars_db
 collection = db.mars
@@ -83,7 +83,7 @@ def scrape():
 
     #Mars Hemispheres
     #Setup browser via Splinter
-    executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
+    executable_path = {'executable_path': 'chromedriver'}
     browser = Browser('chrome', **executable_path, headless = True)
 
     #Visit the USGS Astrogeology site
