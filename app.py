@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect
 import pymongo
 import scrape_mars
 
-client = pymongo.MongoClient('mongodb://localhost:27017')
+client = pymongo.MongoClient('mongodb://127.0.0.1:27017')
 db = client.mars_db
 collection = db.mars
 

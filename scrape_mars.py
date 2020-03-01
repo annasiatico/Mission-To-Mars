@@ -12,7 +12,7 @@ collection = db.mars
 
 def scrape():
 
-    collection.drop()
+    # collection.drop()
 
     #NASA Mars News
     #Define URL
@@ -84,7 +84,7 @@ def scrape():
     #Mars Hemispheres
     #Setup browser via Splinter
     executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
-    browser = Browser('chrome', **executable_path, headless = False)
+    browser = Browser('chrome', **executable_path, headless = True)
 
     #Visit the USGS Astrogeology site
     usgs_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
@@ -96,12 +96,12 @@ def scrape():
     hemis_img_urls = []
 
     for title,url in urls:
-        product_dict = {}
-        product_dict['title'] = title
+        img_dict = {}
+        img_dict['title'] = title
         browser.visit(url)
         img_url = browser.find_by_css('img[class="wide-image"]')['src']
-        product_dict['img_url'] = img_url
-        hemis_img_urls.append(product_dict)
+        img_dict['img_url'] = img_url
+        hemis_img_urls.append(img_dict)
 
     browser.quit()
 

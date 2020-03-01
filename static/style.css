@@ -4,13 +4,13 @@ body{
 }
 
 .banner-text {
-	padding-top: 3%;
+	padding-top: 5%;
 }
 
 .banner-text h1{
 	font-family: "Source Sans Pro";
 	color: #ffffff;
-	font-size: 53px;
+	font-size: 55px;
 	letter-spacing: 10px;
 	font-weight: 600;
 }
@@ -19,15 +19,15 @@ body{
 	color: #8d8d8d;
 	font-size: 12px;
 	font-weight: 500;
-	letter-spacing: 3px;
+	letter-spacing: 5px;
 	line-height: 24px;
-	margin-top: 10px;
+	margin-top: 15px;
 	margin-bottom: 80px;
 	text-transform: uppercase;
 }
 
 .news h5 h6 {
-	font: 27px ;
+	font: 30px ;
 }
 .news p {
 	color: #ffffff;
@@ -43,17 +43,13 @@ body{
 	font-size: 12px;
 }
 
-.card-body {
-	background-color: #000;
-	position: relative;
-	border: 0;
-	margin: 0;
-	padding: 50px 3% 0;
-	padding-bottom: 30px;
-	background-size: cover;
-}
-
 .h3{
     color: #ffffff;
 	margin-bottom: 3.5rem;
+}
+
+.modal-content {
+    background-color: #000;
+    color:#ffe4be;
+    border-radius: 0rem;
 }
