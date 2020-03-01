@@ -15,7 +15,6 @@ pandas = "*"
 ipykernel = "*"
 lxml = "*"
 flask = "*"
-gunicorn = "*"
 
 [requires]
 python_version = "3.8"
