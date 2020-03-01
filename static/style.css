@@ -3,8 +3,8 @@ body{
     background-color: #060606 ; 
 }
 
-.banner-text {
-	padding-top: 5%;
+.container-fluid {
+	padding-top: 3%;
 }
 
 .banner-text h1{
