@@ -26,23 +26,6 @@ body{
 	text-transform: uppercase;
 }
 
-.news h5 h6 {
-	font: 30px ;
-}
-.news p {
-	color: #ffffff;
-	display: block;
-	font-size: 17px;
-	font-style: normal;
-	font-weight: 400;
-	margin-top: 20px;
-}
-
-.news a{
-	color: #ffffff;
-	font-size: 12px;
-}
-
 .h3{
     color: #ffffff;
 	margin-bottom: 3.5rem;
